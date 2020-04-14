@@ -3,15 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)},  {
+  { path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)},
+  {
     path: 'district',
     loadChildren: () => import('./district/district.module').then( m => m.DistrictPageModule)
   },
-  {
-    path: 'image-gallery',
-    loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
-  },
-
 ];
 
 @NgModule({

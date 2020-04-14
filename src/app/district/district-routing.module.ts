@@ -23,9 +23,6 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },  {
-    path: 'booking-form',
-    loadChildren: () => import('./booking-form/booking-form.module').then( m => m.BookingFormPageModule)
   },
 
 

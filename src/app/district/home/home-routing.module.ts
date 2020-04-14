@@ -9,8 +9,8 @@ const routes: Routes = [
     component: HomePage
   },
   {
-    path: 'rooms-offer',
-    loadChildren: () => import('./rooms-offer/rooms-offer.module').then( m => m.RoomsOfferPageModule)
+    path: 'image-gallery',
+    loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
   },
   {
     path: 'room-detail',
