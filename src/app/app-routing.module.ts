@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'district',
     loadChildren: () => import('./district/district.module').then( m => m.DistrictPageModule)
   },
+  {
+    path: 'image-gallery',
+    loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
+  },
 
 ];
 
