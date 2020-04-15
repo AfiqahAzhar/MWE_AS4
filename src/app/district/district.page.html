@@ -1,20 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>district</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      this is the district page!
-    </ion-card-content>
-  </ion-card>
-
-  <ion-list>
-    <ion-item>
-      <p>HELLO!</p>
-    </ion-item>
-  </ion-list>
-
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-label>Home</ion-label>
+        <ion-icon name="home"></ion-icon>     
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-label>Search</ion-label>
+        <ion-icon name="search"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="fav">
+        <ion-label>Fav</ion-label>
+        <ion-icon name="heart"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="about">
+        <ion-label>About</ion-label>
+        <ion-icon name="card"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
+    
