@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-content fullscreen>
+    <ion-card>
+      <ion-card-content>
+        <ion-img src="../assets/imageincard.png">
+        </ion-img>
+      </ion-card-content>
+      <ion-card-header text-center class="header">
+        SweetRoom
+      </ion-card-header>
+      <ion-card-content>
+        <p>Email</p>
+        <p><ion-input type="text" class="outline-input">
+        </ion-input></p>
+        <br>
+        <p>Password</p>
+        <p><ion-input type="password" class="outline-input">
 
-<ion-content>
-
-</ion-content>
+        </ion-input></p>
+        <br>
+        <ion-button (click)="toHomePage()" expand="block">Login</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>
