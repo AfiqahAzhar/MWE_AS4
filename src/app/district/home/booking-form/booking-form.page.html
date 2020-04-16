@@ -1,9 +1,38 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>booking-form</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label position="stacked">First Name</ion-label>
+          <ion-input required type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">IC Number</ion-label>
+          <ion-input required type="text" placeholder="00-000000"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Phone Number</ion-label>
+          <ion-input required type="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Available</ion-label>
+          <ion-label position="stacked">From</ion-label>
+          <ion-input required type="date"></ion-input>
+          <ion-label position="stacked">To</ion-label>
+          <ion-input required type="date"></ion-input>
+        </ion-item>
+      </ion-list>
 
+      <div class="button">
+      <ion-button type="submit" color="primary">Book</ion-button>
+      <ion-button type="submit" color="danger">Cancel</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>  
 </ion-content>

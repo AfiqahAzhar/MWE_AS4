@@ -1,9 +1,35 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>payment-form</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label position="stacked">Card Holder Name</ion-label>
+          <ion-input required type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Card Number</ion-label>
+          <ion-input required type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Expiry month & year</ion-label>
+          <ion-datetime displayFormat="MM/YY" placeholder="MM/YY"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Cvc</ion-label>
+          <ion-input required type="text" maxlength="3"></ion-input>
+        </ion-item>
+      </ion-list>
 
+      <div class="button">
+      <ion-button type="submit" color="primary">Confirm</ion-button>
+      <ion-button type="submit" color="danger">Cancel</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>  
 </ion-content>
