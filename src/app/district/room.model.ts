@@ -7,6 +7,7 @@ export class Room {
                 public kitchen: number,
                 public park: number,
                 public description: string,
-                public price: number
+                public price: number,
+                public userId: string
                 ) {}
 }

@@ -9,33 +9,40 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col>
-
+    
         <ion-row>
-          <ion-col>
+          <ion-col size-sm="6" offset-sm="3">
             <ion-img [src]="room.image"></ion-img>
           </ion-col>
         </ion-row>
           
       <ion-row>
         <ion-col>
-          <ion-label>
-            <ion-icon name="person-outline"></ion-icon>
-            <p>{{ room.guest }} Guest</p>
-          </ion-label>
+          <ion-item lines="none">
+            <ion-icon name="person-outline"> </ion-icon>
+          <p> {{ room.guest }} Guest</p>
+          </ion-item>
         </ion-col>
         <ion-col>
-          <p><ion-icon name="pizza-outline"></ion-icon>{{ room.kitchen }} Kitchen</p>
+          <ion-item lines="none">
+          <ion-icon name="pizza-outline"></ion-icon>
+          <p>{{ room.kitchen }} Kitchen</p>
+        </ion-item>
         </ion-col>
       </ion-row>
 
         <ion-row>
           <ion-col>
-            <p><ion-icon name="bed-outline"></ion-icon>{{ room.bedroom }} Bedroom</p>
+            <ion-item lines="none">
+            <ion-icon name="bed-outline"></ion-icon>
+            <p>{{ room.bedroom }} Bedroom</p>
+          </ion-item>
           </ion-col>
           <ion-col>
-            <p><ion-icon name="car-sport-outline"></ion-icon>{{ room.park }} Parking Space</p>
+            <ion-item lines="none">
+            <ion-icon name="car-sport-outline"></ion-icon>
+            <p>{{ room.park }} Garage</p>
+          </ion-item>
           </ion-col>
         </ion-row>
 
@@ -43,8 +50,8 @@
           <ion-col>
             <ion-label>
              <h2>DESCRIPTION</h2> 
-             <p>{{ room.description }}</p>
             </ion-label>
+             <p>{{ room.description }}</p>
           </ion-col>
         </ion-row>
 
@@ -63,7 +70,6 @@
           </ion-col>
         </ion-row>
         
-      </ion-col>
-    </ion-row>
+     
   </ion-grid>
 </ion-content>
