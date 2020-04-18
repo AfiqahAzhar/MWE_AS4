@@ -35,7 +35,7 @@ const routes: Routes = [
     path: '',
     redirectTo: '/district/tabs/home',
     pathMatch: 'full'
-  },
+  }
 
 
 ];
