@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: RoomDetailPage
+  },
+  {
+    path: 'edit-room',
+    loadChildren: () => import('./edit-room/edit-room.module').then( m => m.EditRoomPageModule)
+  },
+  {
+    path: 'new-room',
+    loadChildren: () => import('./new-room/new-room.module').then( m => m.NewRoomPageModule)
   }
 ];
 

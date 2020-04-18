@@ -7,29 +7,27 @@
 <ion-content>
   <ion-card>
     <ion-card-content>
-      <form [formGroup]="form">
       <ion-list lines="full">
         <ion-item>
           <ion-label position="stacked">Card Holder Name</ion-label>
-          <ion-input required type="text" formControlName="cardHolderName"></ion-input>
+          <ion-input required type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Card Number</ion-label>
-          <ion-input required type="text" placeholder="0000-0000-0000-0000" formControlName="cardNumber"></ion-input>
+          <ion-input required type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Expiry month & year</ion-label>
-          <ion-datetime displayFormat="MM/YY" min="2020-04" max="2025-12" placeholder="MM/YY" formControlName="expiry"></ion-datetime>
+          <ion-datetime displayFormat="MM/YY" placeholder="MM/YY"></ion-datetime>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Cvc</ion-label>
-          <ion-input required type="text" maxlength="3" formControlName="cvc"></ion-input>
+          <ion-input required type="text" maxlength="3"></ion-input>
         </ion-item>
       </ion-list>
-      </form>
 
       <div class="button">
-      <ion-button type="submit" color="primary" (click)="onCreatePayment()" [disabled]="!form.valid">Confirm</ion-button>
+      <ion-button type="submit" color="primary">Confirm</ion-button>
       <ion-button type="submit" color="danger">Cancel</ion-button>
       </div>
     </ion-card-content>

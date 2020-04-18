@@ -1,17 +1,35 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>SweetRoom</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="./room-detail/new-room">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid >
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2" text-center>
-        <ion-list>
-          <ion-item *ngFor="let room of loadedRooms" [routerLink]="['./',room.id]" detail>
-            <ion-label><h2>{{ room.title }}</h2></ion-label>
-          </ion-item>
+        <ion-list *ngIf="listedLoadedRooms.length > 0">
+          <ion-item-sliding  *ngFor= "let room of listedLoadedRooms" #itemSliding>
+            <ion-item  [routerLink]="['./', room.id]" detail>
+              <ion-label><h2>{{ room.title }}</h2></ion-label>
+            </ion-item>
+            <ion-item-options side="start">
+              <ion-item-option  color="secondary" (click)="onEdit(room.id, itemSliding)">
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+
+            <ion-item-options side="end">
+              <ion-item-option  color="danger" (click)="onDelete(room.id, itemSliding)">
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
         </ion-list>
       </ion-col>
     </ion-row>
