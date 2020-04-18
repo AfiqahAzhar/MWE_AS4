@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'payment-form',
     loadChildren: () => import('./payment-form/payment-form.module').then( m => m.PaymentFormPageModule)
+  },
+  {
+    path: 'qr-code',
+    loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
   }
 ];
 
