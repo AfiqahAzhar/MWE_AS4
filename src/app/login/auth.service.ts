@@ -8,6 +8,7 @@ import 'firebase/firestore';
 })
 export class AuthService {
 
+  private userId = 'abc';
   constructor() { }
 
   loginUser(
@@ -42,5 +43,9 @@ export class AuthService {
 
   logoutUser(): Promise<void> {
     return firebase.auth().signOut();
+  }
+
+  get $userId() {
+    return this.userId;
   }
 }
