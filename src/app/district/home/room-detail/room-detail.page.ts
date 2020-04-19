@@ -47,4 +47,8 @@ export class RoomDetailPage implements OnInit, OnDestroy {
     }
   }
 
+  getBook() {
+    this.navCtrl.navigateBack('/district/tabs/home/booking-form');
+  }
+
 }

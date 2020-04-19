@@ -27,7 +27,11 @@ const routes: Routes = [
   {
     path: 'qr-code',
     loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
-  }
+  },
+  {
+    path: 'edit/:roomId',
+    loadChildren: () => import('./edit-room/edit-room.module').then( m => m.EditRoomPageModule)
+  },
 ];
 
 @NgModule({

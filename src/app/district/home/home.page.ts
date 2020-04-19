@@ -33,7 +33,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   onEdit(roomId: string, itemSliding: IonItemSliding) {
     itemSliding.close();
-    this.router.navigate(['/district/tabs/home/edit-room /', roomId]);
+    this.router.navigate(['/district/tabs/home/edit/', roomId]);
     console.log('Editing item:', roomId);
   }
 

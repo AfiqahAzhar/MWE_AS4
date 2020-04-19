@@ -25,7 +25,7 @@ export class EditRoomPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       if (!paramMap.has('roomId')) {
-        this.navCtrl.navigateBack('/district/tabs/home/');
+        this.navCtrl.navigateBack('/district/tabs/home');
         return;
       }
       this.roomSub = this.roomsService.getRoom(paramMap.get('roomId')).subscribe(room => {
@@ -41,8 +41,6 @@ export class EditRoomPage implements OnInit, OnDestroy {
       guest: new FormControl(null, {
         updateOn: 'blur',
         validators: [Validators.required]
-      }),
-      image: new FormControl(null, {
       }),
       bedroom: new FormControl(null, {
         updateOn: 'blur',
@@ -74,25 +72,27 @@ ngOnDestroy() {
 }
 
 onEditRoom() {
-  if (!this.form.valid) {
-    return;
-  }
+  // if (!this.form.valid) {
+  //   return;
+  // }
   this.loadingCtrl.create({
     message: 'Updating room...'
   }).then(loadingEl => {
     loadingEl.present();
     // tslint:disable-next-line: max-line-length
-    this.roomsService.updateRoom(this.room.id,
+    this.roomsService.updateRoom(
+      this.room.id,
       this.form.value.title,
       this.form.value.image,
       this.form.value.guest,
       this.form.value.bedroom,
       this.form.value.kitchen,
       this.form.value.park,
-      this.form.value.description, this.form.value.number).subscribe(() => {
+      this.form.value.description,
+      this.form.value.price).subscribe(() => {
       loadingEl.dismiss();
       this.form.reset();
-      this.router.navigateByUrl('/district/tabs/home/');
+      this.router.navigateByUrl('/district/tabs/home');
     });
   });
 }
