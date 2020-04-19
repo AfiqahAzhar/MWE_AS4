@@ -21,10 +21,6 @@ const routes: Routes = [
         loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
       },
       {
-        path: 'image-gallery/:roomId',
-        loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
-      },
-      {
         path: 'home',
         loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
       },
@@ -35,6 +31,10 @@ const routes: Routes = [
       {
         path: 'payment-form',
         loadChildren: () => import('./payment-form/payment-form.module').then( m => m.PaymentFormPageModule)
+      },
+      {
+        path: 'image-gallery',
+        loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
       },
       {
         path: 'qr-code',
@@ -56,6 +56,9 @@ const routes: Routes = [
     path: 'qr-code',
     loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
   },
+
+
+
 ];
 
 @NgModule({
