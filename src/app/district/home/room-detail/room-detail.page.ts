@@ -53,8 +53,9 @@ export class RoomDetailPage implements OnInit, OnDestroy {
     this.router.navigate(['/district/tabs/booking-form']);
 }
 
-  gotogallery() {
-  this.router.navigate(['/district/tabs/image-gallery']);
+  gotogallery(roomId: string) {
+  this.router.navigate(['/district/tabs/image-gallery/', roomId]);
+  console.log(roomId);
 }
 
 }

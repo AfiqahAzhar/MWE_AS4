@@ -33,7 +33,7 @@ const routes: Routes = [
         loadChildren: () => import('./payment-form/payment-form.module').then( m => m.PaymentFormPageModule)
       },
       {
-        path: 'image-gallery',
+        path: 'image-gallery/:roomId',
         loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
       },
       {

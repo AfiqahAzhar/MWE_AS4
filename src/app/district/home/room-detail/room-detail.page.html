@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/district/tabs/home"></ion-back-button>
     </ion-buttons>
@@ -60,7 +60,7 @@
             <ion-label>{{ room.price | currency }} / Day</ion-label>
           </ion-col>
           <ion-col>
-            <ion-button (click)="gotogallery()">View More</ion-button>
+            <ion-button (click)="gotogallery(room.id)">View More</ion-button>
           </ion-col>
         </ion-row>
 
