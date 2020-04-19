@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/district/tabs/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>New Room</ion-title>
+    <ion-title class="ion-text-center">New Room</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="onCreateRoom()">
         <ion-icon name="checkmark" slot="icon-only"></ion-icon>
@@ -27,7 +27,7 @@
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-item>
-            <ion-label position="floating">Guest</ion-label>
+            <ion-label position="floating">How many Guest?</ion-label>
             <ion-input type="number" formControlName="guest"></ion-input>
           </ion-item>
         </ion-col>
@@ -36,7 +36,7 @@
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-item>
-            <ion-label position="floating">Bedroom</ion-label>
+            <ion-label position="floating">How many Bedroom?</ion-label>
             <ion-input type="number" formControlName="bedroom"></ion-input>
           </ion-item>
         </ion-col>
@@ -45,7 +45,7 @@
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-item>
-            <ion-label position="floating">Kitchen</ion-label>
+            <ion-label position="floating">How many Kitchen?</ion-label>
             <ion-input type="number" formControlName="kitchen"></ion-input>
           </ion-item>
         </ion-col>
@@ -54,7 +54,7 @@
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-item>
-            <ion-label position="floating">Park</ion-label>
+            <ion-label position="floating">How many Garage?</ion-label>
             <ion-input type="number" formControlName="park"></ion-input>
           </ion-item>
         </ion-col>
@@ -63,7 +63,7 @@
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-item>
-            <ion-label position="floating">Description</ion-label>
+            <ion-label position="floating">Description of the room</ion-label>
             <ion-textarea rows="3" formControlName="description"></ion-textarea>
           </ion-item>
         </ion-col>
@@ -72,12 +72,11 @@
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-item>
-            <ion-label position="floating">Price</ion-label>
+            <ion-label position="floating">How much is the room per day?</ion-label>
             <ion-input type="number" formControlName="price"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-
     </ion-grid>
   </form>
 </ion-content>
