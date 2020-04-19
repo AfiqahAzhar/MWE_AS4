@@ -25,6 +25,22 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
       },
       {
+        path: 'booking-form',
+        loadChildren: () => import('./booking-form/booking-form.module').then( m => m.BookingFormPageModule)
+      },
+      {
+        path: 'payment-form',
+        loadChildren: () => import('./payment-form/payment-form.module').then( m => m.PaymentFormPageModule)
+      },
+      {
+        path: 'image-gallery',
+        loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
+      },
+      {
+        path: 'qr-code',
+        loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
+      },
+      {
         path: '',
         redirectTo: '/district/tabs/home',
         pathMatch: 'full'
@@ -36,6 +52,11 @@ const routes: Routes = [
     redirectTo: '/district/tabs/home',
     pathMatch: 'full'
   },
+  {
+    path: 'qr-code',
+    loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
+  },
+
 
 
 ];

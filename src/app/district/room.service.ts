@@ -61,13 +61,7 @@ export class RoomService {
                     }));
   }
 
-  addRoom(title: string,
-          guest: number,
-          bedroom: number,
-          kitchen: number,
-          park: number,
-          description: string,
-          price: number) {
+  addRoom(title: string, guest: number, bedroom: number, kitchen: number, park: number, description: string, price: number) {
     let generatedId: string;
     const newRoom = new Room(Math.random().toString(),
                               title,

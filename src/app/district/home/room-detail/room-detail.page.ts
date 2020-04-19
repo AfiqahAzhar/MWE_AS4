@@ -43,14 +43,18 @@ export class RoomDetailPage implements OnInit, OnDestroy {
     this.roomsService.fetchRoom().subscribe();
   }
 
-  toGallery() {
-    this.router.navigate(['district/tabs/home/image-gallery']);
-  }
-
   ngOnDestroy() {
     if (this.roomSub) {
       this.roomSub.unsubscribe();
     }
   }
+
+  gotobooking() {
+    this.router.navigate(['/district/tabs/booking-form']);
+}
+
+  gotogallery() {
+  this.router.navigate(['/district/tabs/image-gallery']);
+}
 
 }
