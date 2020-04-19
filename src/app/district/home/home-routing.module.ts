@@ -16,10 +16,6 @@ const routes: Routes = [
     path: 'edit/:roomId',
     loadChildren: () => import('./edit-room/edit-room.module').then( m => m.EditRoomPageModule)
   },
-  {
-    path: 'image-gallery/:roomId',
-    loadChildren: () => import('./image-gallery/image-gallery.module').then( m => m.ImageGalleryPageModule)
-  },
 ];
 
 @NgModule({
