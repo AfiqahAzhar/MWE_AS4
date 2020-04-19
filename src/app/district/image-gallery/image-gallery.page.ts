@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Room } from '../room.model';
 
 @Component({
   selector: 'app-image-gallery',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image-gallery.page.scss'],
 })
 export class ImageGalleryPage implements OnInit {
+
+  room: Room;
 
   constructor() { }
 
