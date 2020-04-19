@@ -6,6 +6,7 @@ import { Room } from '../../room.model';
 import { LoadingController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/login/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-room-detail',
@@ -22,7 +23,8 @@ export class RoomDetailPage implements OnInit, OnDestroy {
               private navCtrl: NavController,
               private route: ActivatedRoute,
               private loadingCtrl: LoadingController,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
@@ -47,8 +49,12 @@ export class RoomDetailPage implements OnInit, OnDestroy {
     }
   }
 
-  getBook() {
-    this.navCtrl.navigateBack('/district/tabs/home/booking-form');
-  }
+  gotobooking() {
+    this.router.navigate(['/district/tabs/booking-form']);
+}
+
+  gotogallery() {
+  this.router.navigate(['/district/tabs/image-gallery']);
+}
 
 }

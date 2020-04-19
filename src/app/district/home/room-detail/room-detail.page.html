@@ -60,13 +60,13 @@
             <ion-label>{{ room.price | currency }} / Day</ion-label>
           </ion-col>
           <ion-col>
-            <ion-button>View More</ion-button>
+            <ion-button (click)="gotogallery()">View More</ion-button>
           </ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col>
-            <ion-button color="primary" expand="full" (click)="getBook()">Book</ion-button>
+            <ion-button color="primary" expand="full" (click)="gotobooking()">Book</ion-button>
           </ion-col>
         </ion-row>
         
