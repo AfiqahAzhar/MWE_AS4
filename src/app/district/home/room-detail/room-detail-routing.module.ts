@@ -9,7 +9,7 @@ const routes: Routes = [
     component: RoomDetailPage
   },
   {
-    path: 'edit-room',
+    path: ':roomId',
     loadChildren: () => import('./edit-room/edit-room.module').then( m => m.EditRoomPageModule)
   },
   {
