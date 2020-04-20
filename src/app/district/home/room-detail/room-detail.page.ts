@@ -6,8 +6,7 @@ import { Room } from '../../room.model';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/login/auth.service';
 import { Router } from '@angular/router';
-import { UserdataService } from '../../userdata.service';
-import { Storage } from '@ionic/storage';
+import { FavService } from 'src/app/fav.service';
 
 
 @Component({
@@ -20,7 +19,7 @@ export class RoomDetailPage implements OnInit, OnDestroy {
   isBookable = false;
   room: Room;
   private roomSub: Subscription;
-  favourites = [];
+  cart = [];
 
   @Input() selected: boolean;
   @Output() selectedChange = new EventEmitter<boolean>();
@@ -30,8 +29,7 @@ export class RoomDetailPage implements OnInit, OnDestroy {
               private route: ActivatedRoute,
               private authService: AuthService,
               private router: Router,
-              private userData: UserdataService,
-              private storage: Storage) { }
+              private favService: FavService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
@@ -44,6 +42,8 @@ export class RoomDetailPage implements OnInit, OnDestroy {
         this.isBookable = room.userId !== this.authService.$userId;
       });
     });
+
+    this.cart = this.favService.getCart();
   }
 
   ionViewWillEnter() {
@@ -64,23 +64,10 @@ export class RoomDetailPage implements OnInit, OnDestroy {
   this.router.navigate(['/district/tabs/image-gallery']);
 }
 
- public addToFav(room) {
-   this.favourites.push(room);
-   // tslint:disable-next-line: only-arrow-functions
-   this.favourites = this.favourites.filter(function(item, i, ar) {
-     return ar.indexOf(item) === i;
-   });
-   this.storage.set('favourites', this.favourites);
-   this.selected = !this.selected;
-   this.selectedChange.emit(this.selected);
-   console.log(this.favourites);
- }
-
-  removeFavorite(room) {
-  // tslint:disable-next-line: only-arrow-functions
-  this.favourites = this.favourites.filter(function(item) {
-    return item !== room;
-  });
-  this.storage.set('favourites', this.favourites);
-}
+  addToFav(room) {
+    this.favService.addProduct(room);
+    console.log(room);
+    this.selected = !this.selected;
+    this.selectedChange.emit(this.selected);
+  }
 }
