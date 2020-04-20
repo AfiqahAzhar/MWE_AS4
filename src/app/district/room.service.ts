@@ -66,7 +66,7 @@ export class RoomService {
     const newRoom = new Room(Math.random().toString(),
                               title,
                               // tslint:disable-next-line: max-line-length
-                              'https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2020/03/931/524/McDonalds-arch.jpg?ve=1&tl=1',
+                              'https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
                               guest,
                               bedroom,
                               kitchen,

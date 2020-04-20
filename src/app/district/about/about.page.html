@@ -1,33 +1,29 @@
 <ion-app>
-  <ion-content fullscreen>
+  <ion-header>
     <ion-toolbar color="primary">
-      <ion-header>
         <ion-title class="ion-text-center">
           About Us
         </ion-title>
-      </ion-header>
     </ion-toolbar>
-
-    <ion-header>
-      <ion-title class="ion-text-center">
-        SweetRoom
-      </ion-title>
-    </ion-header>
-    <br>
+  </ion-header>
+  
+      
+    
+    <ion-content fullscreen>
     <ion-grid>
       <ion-row>
         <ion-col size-sm="6" offset-sm="3" class="ion-text-center">
-          SweetRoom is a rental room mobile application. We provide you ranges of rooms with better quality products that comforts you through the nights. We offer you best prices that are suitable with each of the room given.   
+          <ion-label><h1>SweetRoom</h1></ion-label>
+          <p>SweetRoom is a rental room mobile application. We provide you ranges of rooms with better quality products that comforts you through the nights. We offer you best prices that are suitable with each of the room given.</p>   
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <br>
-          <ion-header>
+          
             <ion-title class="ion-text-center">
               Members
             </ion-title>
-          </ion-header>
         </ion-col>
       </ion-row>
 
@@ -82,7 +78,7 @@
       
       <ion-row>
         <ion-col>
-          <ion-button expand="block" (click)="logoutUser()">Log Out</ion-button>
+          <ion-button expand="full" (click)="logoutUser()">Log Out</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -1,12 +1,14 @@
-import { Component, OnInit, OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input} from '@angular/core';
 import { RoomService } from '../../room.service';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Room } from '../../room.model';
-import { LoadingController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/login/auth.service';
 import { Router } from '@angular/router';
+import { UserdataService } from '../../userdata.service';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-room-detail',
@@ -18,13 +20,18 @@ export class RoomDetailPage implements OnInit, OnDestroy {
   isBookable = false;
   room: Room;
   private roomSub: Subscription;
+  favourites = [];
+
+  @Input() selected: boolean;
+  @Output() selectedChange = new EventEmitter<boolean>();
 
   constructor(private roomsService: RoomService,
               private navCtrl: NavController,
               private route: ActivatedRoute,
-              private loadingCtrl: LoadingController,
               private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private userData: UserdataService,
+              private storage: Storage) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
@@ -53,9 +60,27 @@ export class RoomDetailPage implements OnInit, OnDestroy {
     this.router.navigate(['/district/tabs/booking-form']);
 }
 
-  gotogallery(roomId: string) {
-  this.router.navigate(['/district/tabs/image-gallery/', roomId]);
-  console.log(roomId);
+  gotogallery() {
+  this.router.navigate(['/district/tabs/image-gallery']);
 }
 
+ public addToFav(room) {
+   this.favourites.push(room);
+   // tslint:disable-next-line: only-arrow-functions
+   this.favourites = this.favourites.filter(function(item, i, ar) {
+     return ar.indexOf(item) === i;
+   });
+   this.storage.set('favourites', this.favourites);
+   this.selected = !this.selected;
+   this.selectedChange.emit(this.selected);
+   console.log(this.favourites);
+ }
+
+  removeFavorite(room) {
+  // tslint:disable-next-line: only-arrow-functions
+  this.favourites = this.favourites.filter(function(item) {
+    return item !== room;
+  });
+  this.storage.set('favourites', this.favourites);
+}
 }
