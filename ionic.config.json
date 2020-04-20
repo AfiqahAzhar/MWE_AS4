@@ -1,5 +1,7 @@
 {
   "name": "mwe4",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
