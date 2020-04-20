@@ -1,9 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>qr-code</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="home-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-input type="text" placeholder="Enter your name" [(ngModel)]="input"></ion-input>
+    <ion-input type="text" placeholder="Enter your Ic" [(ngModel)]="inputOne"></ion-input>
+  </ion-item>
+
+    <ion-button (click)="fetchBooking()"><ion-icon name="barcode"></ion-icon>Generate your code!</ion-button>
+
+<ion-card *ngIf="qrdata">
+  <ion-card-content>
+  <ngx-qrcode [qrc-value]="qrdata" [qrc-element-type]="elementType">
+</ngx-qrcode>
+<p>Screenshot and let the owner of the apartment to scan your QR code.</p>
+</ion-card-content>
+</ion-card>
 
 </ion-content>

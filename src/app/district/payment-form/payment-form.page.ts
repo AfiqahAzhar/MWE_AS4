@@ -58,6 +58,6 @@ async onCreatePayment() {
 
     await alert.present();
     const result = await alert.onDidDismiss();
-    this.router.navigate(['/district/tabs/home']);
+    this.router.navigate(['/district/tabs/qr-code']);
   }
 }
