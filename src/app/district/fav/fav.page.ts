@@ -1,27 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { UserdataService } from '../userdata.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Room } from '../room.model';
-import { IonItemSliding } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { FavService } from 'src/app/fav.service';
+import { Subscription } from 'rxjs';
+import { RoomService } from '../room.service';
 
 @Component({
   selector: 'app-fav',
   templateUrl: './fav.page.html',
   styleUrls: ['./fav.page.scss'],
 })
-export class FavPage implements OnInit {
+export class FavPage implements OnInit, OnDestroy {
+  private roomsSub: Subscription;
+  favourites: Room[] = [];
 
-  listedLoadedRooms: Room[];
-  favourites = [];
-
-  constructor(public userData: UserdataService,
+  constructor(
               public router: Router,
-              public storage: Storage) { }
+              private favService: FavService,
+              private roomsService: RoomService
+            ) { }
 
   ngOnInit() {
+    this.favourites = this.favService.getCart();
   }
 
+  ionViewWillEnter() {
+    this.roomsService.fetchRoom().subscribe();
+  }
+
+  ngOnDestroy(): void {
+    if (this.roomsSub) {
+      this.roomsSub.unsubscribe();
+    }
+  }
 
 
 }

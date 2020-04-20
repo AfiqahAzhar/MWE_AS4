@@ -112,5 +112,4 @@ export class RoomService {
                 this.rooms.next(rooms.filter(o => o.id !== roomId));
               }));
   }
-
 }

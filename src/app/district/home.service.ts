@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeService {
 
-
   constructor(private authService: AuthService, private http: HttpClient) { }
 
   addBooking(name: string, ic: string, phoneno: string,  availableFrom: Date, availableTo: Date) {
@@ -20,6 +19,7 @@ export class HomeService {
       availableFrom,
       availableTo
     );
+    // tslint:disable-next-line: max-line-length
     this.http.post('https://sweetroom-839be.firebaseio.com/user-booking-detail.json', {...newRoom, id: null}).subscribe(data => {
       console.log('success');
      }, error => {
@@ -42,5 +42,5 @@ export class HomeService {
     });
   }
 
+  }
 
-}
