@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { LoadingController } from '@ionic/angular';
@@ -20,7 +19,7 @@ export class ImageGalleryPage implements OnInit {
   storageRef = firebase.storage().ref();
   starsRef = this.storageRef.child('photos/gallery1.jpg');
 
-constructor(private camera: Camera,
+constructor(
             private loadingCtrl: LoadingController) { }
 
 ngOnInit() {
