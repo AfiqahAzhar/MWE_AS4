@@ -2,6 +2,11 @@
     border: 1px solid #c3c3c3;
 }
 
-body{
-    background-color: #2D3957;
+ion-content {
+    --ion-background-color: #2D3957;
+}
+
+ion-card {
+    --ion-background-color:white;
+    margin-top: 10vh;
 }

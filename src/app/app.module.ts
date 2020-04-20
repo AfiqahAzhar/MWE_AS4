@@ -11,7 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 
+<<<<<<< HEAD
+import { Camera } from '@ionic-native/camera/ngx';
+=======
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+>>>>>>> 013fea60fb8237886f7cecb7103b53b8b935020f
 
 
 @NgModule({
@@ -21,9 +25,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Storage,
+<<<<<<< HEAD
+=======
     BarcodeScanner
+>>>>>>> 013fea60fb8237886f7cecb7103b53b8b935020f
   ],
   bootstrap: [AppComponent]
 })

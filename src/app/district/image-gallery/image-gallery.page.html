@@ -1,9 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>image-gallery</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/district/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gallery</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="grabPicture()">
+        <ion-icon name="camera" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" md-size="4" xl-size="3" *ngFor = "let num of [1,2,3,4]">
+        <div class="image-container" [style.background-image]="'url(assets/gallery-photo/gallery'+ num + '.jpg)'">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
